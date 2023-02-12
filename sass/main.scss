@@ -4,10 +4,14 @@
 
 body {
 	@apply font-poppins;
+	color: #282828;
 }
 
 @layer projectStyles {
 	/* UTIITY */
+	.container {
+	}
+
 	.btn {
 		color: white !important;
 		@apply py-3 px-8 rounded-full;
@@ -19,7 +23,7 @@ body {
 
 	/* GENERAL STYLINGS */
 	.header {
-		@apply flex items-center gap-40 px-36 py-8 bg-color-header;
+		@apply flex items-center gap-40 px-36 py-6 bg-color-header;
 	}
 
 	.nav {
@@ -29,11 +33,50 @@ body {
 			@apply flex gap-10;
 		}
 
-		.nav__link {
-		}
-
 		.nav__buttons {
 			@apply flex gap-10 ml-auto;
+		}
+	}
+
+	/* HERO SECTION */
+	.section-hero {
+		@apply flex items-center justify-center py-16 px-32;
+	}
+
+	.hero-content {
+		@apply text-center flex flex-col items-center justify-center gap-4;
+
+		h1 {
+			font-size: 70px !important;
+			line-height: 92px;
+			font-weight: 500 !important;
+		}
+
+		p {
+			@apply text-xl font-medium w-[50%];
+			color: rgba(40, 40, 40, 0.7);
+		}
+
+		button {
+			color: black !important;
+			font-size: 22px !important;
+			font-weight: 500 !important;
+			@apply flex items-center gap-1;
+
+			.icon {
+				@apply h-10 w-10 bg-color-primary flex items-center justify-center rounded-full;
+				box-shadow: 0 5px 0 0 rgba(42, 8, 150, 0.3);
+				transition: all 0.2s;
+
+				i {
+					color: #fff;
+				}
+			}
+		}
+
+		button:active .icon {
+			box-shadow: 0 2px 0 0 rgba(42, 8, 150, 0.3);
+			transform: translatey(2px);
 		}
 	}
 }
