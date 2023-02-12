@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	@apply font-poppins;
+}
+
+@layer projectStyles {
+	/* UTIITY */
+	.btn {
+		color: white !important;
+		@apply py-3 px-8 rounded-full;
+	}
+
+	.btn--primary {
+		@apply bg-color-primary hover:opacity-90;
+	}
+
+	/* GENERAL STYLINGS */
+	.header {
+		@apply flex items-center gap-40 px-36 py-8 bg-color-header;
+	}
+
+	.nav {
+		width: 100%;
+
+		.nav__links {
+			@apply flex gap-10;
+		}
+
+		.nav__link {
+		}
+
+		.nav__buttons {
+			@apply flex gap-10 ml-auto;
+		}
+	}
+}
