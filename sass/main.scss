@@ -9,7 +9,14 @@ body {
 
 @layer projectStyles {
 	/* UTIITY */
-	.container {
+	.heading-secondary {
+		font-size: 40px !important;
+		line-height: 1.2;
+		font-weight: 500 !important;
+	}
+
+	p {
+		color: rgba(40, 40, 40, 0.7);
 	}
 
 	.btn {
@@ -19,6 +26,10 @@ body {
 
 	.btn--primary {
 		@apply bg-color-primary hover:opacity-90;
+	}
+
+	.btn--secondary {
+		@apply bg-color-secondary hover:opacity-90;
 	}
 
 	/* GENERAL STYLINGS */
@@ -158,21 +169,40 @@ body {
 		.collab__content {
 			@apply basis-1/2;
 
-			h2 {
-				font-size: 40px !important;
-				line-height: 1.2;
-				font-weight: 500 !important;
-				margin-bottom: 1rem !important;
-			}
-
 			p {
-				@apply text-base w-9/12;
-				color: rgba(40, 40, 40, 0.7);
+				@apply w-9/12;
+				margin-top: 1rem !important;
 			}
 		}
 
 		.collab__image {
 			@apply basis-1/2;
+		}
+	}
+
+	/* SECTION CTA */
+	.section-cta {
+		@apply py-16;
+	}
+
+	.cta {
+		width: calc(100% - 20%);
+		@apply flex items-center gap-12 bg-color-neutral-2 h-[400px] my-0 mx-auto px-12 rounded-3xl relative overflow-hidden before:absolute before:w-[15rem] before:h-[15rem] before:bg-color-primary before:rounded-full before:top-[-8rem] before:left-[-7rem] after:absolute after:w-[15rem] after:h-[15rem] after:bg-color-primary after:rounded-full after:bottom-[-8rem] after:right-[-7rem];
+
+		figure {
+			@apply self-end basis-1/4;
+		}
+
+		.cta-content {
+			@apply flex flex-col items-center gap-4 basis-9/12;
+
+			h2 {
+				@apply text-center;
+			}
+
+			p {
+				margin-bottom: 1rem !important;
+			}
 		}
 	}
 }
