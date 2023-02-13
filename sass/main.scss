@@ -82,7 +82,7 @@ body {
 
 	/* DASHBOARD OVERVIEW */
 	.section-dashboard-overview {
-		@apply h-[530px] flex items-center justify-center;
+		@apply h-[530px] flex items-center justify-center mb-16;
 		transform: skewy(7deg);
 		background: linear-gradient(to right bottom, #87cefa, #2a0896);
 		background-size: 400% 400%;
@@ -109,6 +109,41 @@ body {
 		}
 		100% {
 			background-position: 0% 50%;
+		}
+	}
+
+	/* SECTION ABOUT*/
+	.section-about {
+		@apply py-16 px-32;
+	}
+
+	.about-container {
+		max-width: 900px;
+		margin: 0 auto;
+		@apply flex flex-col gap-8;
+	}
+
+	.about-row {
+		@apply grid grid-cols-2 items-center gap-8;
+		font-weight: 500;
+
+		figure {
+			img {
+				object-fit: fill;
+				margin-left: -2rem;
+			}
+		}
+	}
+
+	.about-content {
+		@apply flex flex-col gap-4 mb-16 ml-8;
+
+		h2 {
+			font-size: 32px !important;
+		}
+		p {
+			font-size: 22px;
+			color: rgba(40, 40, 40, 0.7);
 		}
 	}
 }
