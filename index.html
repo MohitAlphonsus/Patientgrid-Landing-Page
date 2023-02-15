@@ -46,10 +46,27 @@
 			</nav>
 
 			<!-- mobile nav -->
-			<button class="btn-mobile-nav">
-				<i class="fa-solid fa-bars" name="menu"></i>
-				<i class="fa-solid fa-xmark" name="close"></i>
-			</button>
+
+			<i id="btn-mobile-menu" class="fa-solid fa-bars menu-icon"></i>
+
+			<nav class="nav-mobile">
+				<ul class="nav-mobile__links">
+					<li id="btn-mobile-close">
+						<i class="fa-solid fa-close menu-icon"></i>
+					</li>
+
+					<li><a href="#" class="nav-mobile__link">Products</a></li>
+					<li><a href="#" class="nav-mobile__link">Plans</a></li>
+					<li><a href="#" class="nav-mobile__link">More</a></li>
+
+					<li><a href="#" class="nav-mobile__link">Login</a></li>
+					<li>
+						<a href="#" class="nav-mobile__link btn btn--primary"
+							>Request a demo</a
+						>
+					</li>
+				</ul>
+			</nav>
 		</header>
 
 		<section class="section-hero">
@@ -212,5 +229,20 @@
 			<!-- 5 -->
 			<p class="copyright">&copy; Copyright 2023, All Rights Reserved.</p>
 		</footer>
+
+		<!-- script -->
+		<script>
+			const btnNavMenu = document.getElementById('btn-mobile-menu');
+			const btnNavClose = document.getElementById('btn-mobile-close');
+			const header = document.querySelector('.header');
+
+			btnNavMenu.addEventListener('click', () => {
+				header.classList.add('open-nav');
+			});
+
+			btnNavClose.addEventListener('click', () => {
+				header.classList.remove('open-nav');
+			});
+		</script>
 	</body>
 </html>
