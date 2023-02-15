@@ -3,12 +3,13 @@
 @tailwind utilities;
 
 body {
-	@apply font-poppins;
+	@apply font-poppins overflow-x-hidden;
 	color: #282828;
 }
 
 @layer projectStyles {
 	/* UTIITY */
+
 	.heading-secondary {
 		font-size: 30px !important;
 		line-height: 1.2;
@@ -29,7 +30,7 @@ body {
 
 	.btn {
 		color: white !important;
-		@apply py-3 px-8 rounded-full;
+		@apply px-4 py-2 xl:py-3 xl:px-8 rounded-full;
 	}
 
 	.btn--primary {
@@ -42,15 +43,18 @@ body {
 
 	/* GENERAL STYLINGS */
 	.header {
-		@apply flex items-center justify-between px-16 py-4 lg:gap-40 lg:px-36 lg:py-6 bg-color-header;
+		@apply flex items-center justify-between px-16 py-4 lg:gap-10 xl:gap-40 lg:px-32 xl:px-36 lg:py-6 bg-color-header;
 	}
 
 	.nav {
-		@apply hidden;
 		width: 100%;
 
 		.nav__links {
-			@apply flex gap-10;
+			@apply hidden lg:flex gap-10;
+		}
+
+		.nav__link {
+			@apply md:text-base;
 		}
 
 		.nav__buttons {
@@ -59,16 +63,48 @@ body {
 	}
 
 	/* MOBILE NAV */
+
+	.menu-icon {
+		@apply text-3xl cursor-pointer;
+	}
+
 	.btn-mobile-nav {
-		@apply ml-auto;
+		box-shadow: -10px 0px 5px 0px rgba(0, 0, 0, 0.2);
+		@apply ml-auto lg:hidden;
+	}
 
-		i {
-			@apply text-2xl;
+	#btn-mobile-menu {
+		@apply lg:hidden;
+	}
+
+	.nav-mobile {
+		transform: translateX(120%);
+		transition: all 0.2s;
+		@apply absolute top-0 right-0 bottom-0 z-50 bg-white px-8 py-4;
+
+		@screen sm {
+			width: 60%;
 		}
 
-		i[name='close'] {
-			@apply hidden;
+		@screen md {
+			width: 40%;
 		}
+	}
+
+	.header.open-nav .nav-mobile {
+		transform: translateX(0);
+	}
+
+	.nav-mobile__links {
+		@apply flex flex-col gap-6;
+	}
+
+	.nav-mobile__links li {
+		@apply first:ml-auto first:mr-8 last:mt-8;
+	}
+
+	.nav-mobile__link {
+		@apply text-xl;
 	}
 
 	/* HERO SECTION */
@@ -147,9 +183,9 @@ body {
 			center/contain;
 
 		@screen lg {
-			width: calc(100% - 10%);
+			width: calc(100% - 5%);
 			background: url(/assets/dashboard-preview.png) no-repeat center
-				center/cover;
+				center/contain;
 		}
 	}
 
@@ -232,10 +268,18 @@ body {
 
 	.cta {
 		width: calc(100% - 10%);
-		@apply flex items-center gap-12 bg-color-neutral-2 h-[400px] my-0 mx-auto px-12 rounded-3xl relative overflow-hidden before:absolute before:w-[15rem] before:h-[15rem] before:bg-color-primary before:rounded-full before:top-[-8rem] before:left-[-7rem] after:absolute after:w-[15rem] after:h-[15rem] after:bg-color-primary after:rounded-full after:bottom-[-8rem] after:right-[-7rem];
+		@apply flex items-center gap-12 bg-color-neutral-2 h-[400px] my-0 mx-auto px-12 rounded-3xl relative overflow-hidden before:absolute before:w-[15rem] before:h-[15rem] before:bg-color-primary before:rounded-full before:top-[-8rem] before:left-[-12rem] after:absolute after:w-[15rem] after:h-[15rem] after:bg-color-primary after:rounded-full after:bottom-[-8rem] after:right-[-12rem];
+
+		@screen lg {
+			@apply before:left-[-7rem] after:right-[-7rem];
+		}
 
 		figure {
 			@apply hidden lg:self-end lg:basis-1/4;
+
+			@screen lg {
+				@apply block;
+			}
 		}
 
 		.cta-content {
