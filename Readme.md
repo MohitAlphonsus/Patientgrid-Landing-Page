@@ -1,4 +1,5 @@
 # Patientgrid Website
+### Responsive website
 
 `npm install`
 
